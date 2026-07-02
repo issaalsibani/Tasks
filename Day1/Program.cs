@@ -360,6 +360,7 @@ namespace Day1
             */
             //////////////////////////////////////////////////////////////////////////////
             // Task 13 - Triangle Type Classifier
+            /*
             Console.WriteLine("Enter the lenght of the first side of the triangle: ");
             float side1 = float.Parse(Console.ReadLine());
             Console.WriteLine("Enter the lenght of the second side of the triangle: ");
@@ -395,6 +396,61 @@ namespace Day1
             {
                 Console.WriteLine("This is not a valid triangle");
             }
+            */
+            //////////////////////////////////////////////////////////////////////////////
+            //Task 14 - Online Store Checkout
+            Console.WriteLine("Entr product code. 1 , 2 or 3 :");
+            int productCode = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter quantity: ");
+            int quantity = int.Parse(Console.ReadLine());
+            Console.WriteLine("Do you have a discount code? (yes/no): ");
+            String discountInput = Console.ReadLine().ToLower();
+            decimal  price = 0;
+            switch (productCode)
+            {
+                case 1:
+                    {
+                        price = 8.500m;
+                        Console.WriteLine("Headphones " + price + " OMR");
+                    }
+                    break;
+                case 2:
+                    {
+                        price = 12.000m;
+                        Console.WriteLine("Keyboard " + price + " OMR");
+                    }
+                    break;
+                case 3:
+                    {
+                        price = 5.000m;
+                        Console.WriteLine("Mouse " + price + " OMR");
+                    }
+                    break;
+            }
+
+            bool hasDiscount = discountInput == "yes";
+            decimal subtotal = price * quantity;
+            decimal discount = 0;
+            discount = subtotal * 0.1m ;
+
+            if (hasDiscount && subtotal > 20)
+            
+            {
+                discount = subtotal * 0.1m;
+            }
+
+            decimal afterdiscount = subtotal - discount;
+            
+            decimal tax = afterdiscount * 0.05m;
+
+            decimal totalcost = afterdiscount + tax;
+            Console.WriteLine("Subtotal: " + subtotal + " OMR");
+        
+
+            Console.WriteLine("Total cost is " + totalcost);
+            Console.WriteLine("Discount applied: " + discount + " OMR");
+            Console.WriteLine("Tax applied: " + tax + " OMR");
+            Console.WriteLine("Total cost after discount and tax: " + totalcost + " OMR");
         }
 
 
