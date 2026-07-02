@@ -264,6 +264,33 @@ namespace Day1
             //////////////////////////////////////////////////////////////////////////////
 
            // Task 11 - Loan Eligibility System
+           Console.Write("Enter your age: ");
+            int age = int.Parse(Console.ReadLine());
+            Console.Write("Enter your monthly income (OMR): ");
+            float income = float.Parse(Console.ReadLine());
+            Console.WriteLine("Do you have any existing loans? (yes/no): ");
+            String loans = Console.ReadLine().ToLower();
+            bool ExistingLoans = loans == "yes";
+            if (age > 21 && age < 60 && income >= 400 && !ExistingLoans)
+            {
+                Console.WriteLine("You are eligible for a loan.");
+            }
+            else if (age <= 21 || age >= 60)
+            {
+                Console.WriteLine("Not eligible for a loan (age out of range)");
+            }
+            else if (income < 400)
+            {
+                Console.WriteLine("Not eligible for a loan (income too low)");
+            }
+            else if (ExistingLoans)
+            {
+                Console.WriteLine("Not eligible for a loan (has an existing loan)");
+            }
+            else
+            {
+                Console.WriteLine("Invalid input");
+            }
         }
 
 
