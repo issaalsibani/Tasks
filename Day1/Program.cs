@@ -295,7 +295,7 @@ namespace Day1
             */
             //////////////////////////////////////////////////////////////////////////////
             //Task 12 - Shipping Cost Calculator
-
+            /*
             Console.WriteLine("Please Enter  destination region: ");
             Console.Write("Enter A for local, B for National, C for International: ");
             Char region = Char.Parse (Console.ReadLine().ToUpper());
@@ -357,10 +357,48 @@ namespace Day1
                     }
                     break; 
             }
+            */
+            //////////////////////////////////////////////////////////////////////////////
+            // Task 13 - Triangle Type Classifier
+            Console.WriteLine("Enter the lenght of the first side of the triangle: ");
+            float side1 = float.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the lenght of the second side of the triangle: ");
+            float side2 = float.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the lenght of the third side of the triangle: ");
+            float side3 = float.Parse(Console.ReadLine());
+
+            if (side1 + side2 > side3 && side1 + side3 > side2 && side2+ side3 > side1)
+            {
+                Console.WriteLine("This a valid triangle");
+            }
+
+            else
+            {
+                Console.WriteLine("This is not a valid triangle");
+            }
+            
+             if (side1 == side2 && side2 == side3)
+             {
+                Console.WriteLine("The type of triangle is Equilateral");
+             }
+            else if (side1 == side2 || side1 == side3 || side2 == side3)
+            {
+                Console.WriteLine("The type of triangle is Isosceles");
+            }
+
+            else if (side1 != side2 && side1 != side3 && side2 != side3)
+            {
+                Console.WriteLine("The type of triangle is Scalene");
+            }
+
+            else
+            {
+                Console.WriteLine("This is not a valid triangle");
+            }
         }
-        
-    
-    
+
+
+
     }
 
         
