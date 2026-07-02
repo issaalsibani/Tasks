@@ -399,6 +399,7 @@ namespace Day1
             */
             //////////////////////////////////////////////////////////////////////////////
             //Task 14 - Online Store Checkout
+            /*
             Console.WriteLine("Entr product code. 1 , 2 or 3 :");
             int productCode = int.Parse(Console.ReadLine());
             Console.WriteLine("Enter quantity: ");
@@ -451,6 +452,61 @@ namespace Day1
             Console.WriteLine("Discount applied: " + discount + " OMR");
             Console.WriteLine("Tax applied: " + tax + " OMR");
             Console.WriteLine("Total cost after discount and tax: " + totalcost + " OMR");
+            */
+            ////
+            ///Task 15 - University Admission Decision
+            // Task 15 - University Admission Decision
+
+            Console.Write("Enter program type (S for Science, A for Arts): ");
+            char programType = char.Parse(Console.ReadLine().ToUpper());
+
+            Console.Write("Enter your GPA out of 4.0: ");
+            double gpa = double.Parse(Console.ReadLine());
+
+            Console.Write("Enter your entrance exam score out of 100: ");
+            int examScore = int.Parse(Console.ReadLine());
+
+            Console.Write("Do you have an extracurricular achievement? (yes/no): ");
+            string achievementInput = Console.ReadLine().ToLower();
+
+            bool hasAchievement = achievementInput == "yes";
+
+            bool meetsRequirements = false;
+            string programName = "";
+
+            switch (programType)
+            {
+                case 'S':
+                    programName = "Science";
+                    meetsRequirements = gpa >= 3.0 && examScore >= 75;
+                    break;
+
+                case 'A':
+                    programName = "Arts";
+                    meetsRequirements = gpa >= 2.5 && examScore >= 60;
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid program type.");
+                    return;
+            }
+
+            if (meetsRequirements)
+            {
+                Console.WriteLine("Program: " + programName);
+                Console.WriteLine("Result: Admitted");
+            }
+            else if (hasAchievement)
+            {
+                Console.WriteLine("Program: " + programName);
+                Console.WriteLine("Result: Conditionally Admitted");
+            }
+            else
+            {
+                Console.WriteLine("Program: " + programName);
+                Console.WriteLine("Result: Not Admitted");
+            }
+
         }
 
 
