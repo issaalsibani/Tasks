@@ -263,38 +263,106 @@ namespace Day1
             */
             //////////////////////////////////////////////////////////////////////////////
 
-           // Task 11 - Loan Eligibility System
-           Console.Write("Enter your age: ");
-            int age = int.Parse(Console.ReadLine());
-            Console.Write("Enter your monthly income (OMR): ");
-            float income = float.Parse(Console.ReadLine());
-            Console.WriteLine("Do you have any existing loans? (yes/no): ");
-            String loans = Console.ReadLine().ToLower();
-            bool ExistingLoans = loans == "yes";
-            if (age > 21 && age < 60 && income >= 400 && !ExistingLoans)
+            // Task 11 - Loan Eligibility System
+            /*
+            Console.Write("Enter your age: ");
+             int age = int.Parse(Console.ReadLine());
+             Console.Write("Enter your monthly income (OMR): ");
+             float income = float.Parse(Console.ReadLine());
+             Console.WriteLine("Do you have any existing loans? (yes/no): ");
+             String loans = Console.ReadLine().ToLower();
+             bool ExistingLoans = loans == "yes";
+             if (age > 21 && age < 60 && income >= 400 && !ExistingLoans)
+             {
+                 Console.WriteLine("You are eligible for a loan.");
+             }
+             else if (age <= 21 || age >= 60)
+             {
+                 Console.WriteLine("Not eligible for a loan (age out of range)");
+             }
+             else if (income < 400)
+             {
+                 Console.WriteLine("Not eligible for a loan (income too low)");
+             }
+             else if (ExistingLoans)
+             {
+                 Console.WriteLine("Not eligible for a loan (has an existing loan)");
+             }
+             else
+             {
+                 Console.WriteLine("Invalid input");
+             }
+            */
+            //////////////////////////////////////////////////////////////////////////////
+            //Task 12 - Shipping Cost Calculator
+
+            Console.WriteLine("Please Enter  destination region: ");
+            Console.Write("Enter A for local, B for National, C for International: ");
+            Char region = Char.Parse (Console.ReadLine().ToUpper());
+            Console.WriteLine("Please Enter the weight of the package in kg: ");
+            float weight = float.Parse(Console.ReadLine());
+
+            switch(region)
             {
-                Console.WriteLine("You are eligible for a loan.");
-            }
-            else if (age <= 21 || age >= 60)
-            {
-                Console.WriteLine("Not eligible for a loan (age out of range)");
-            }
-            else if (income < 400)
-            {
-                Console.WriteLine("Not eligible for a loan (income too low)");
-            }
-            else if (ExistingLoans)
-            {
-                Console.WriteLine("Not eligible for a loan (has an existing loan)");
-            }
-            else
-            {
-                Console.WriteLine("Invalid input");
+                case 'A':
+                    Console.WriteLine("The shipping cost for local region is 1.00 OMR");
+                    if (weight > 5 && weight <= 10)
+                    {
+                        Console.WriteLine("Addition 2.00 OMR is added to the total cost for extra weight");
+                        Console.WriteLine("The total shipping cost is 3.00 OMR");
+                    }
+                    
+                    else if (weight > 10)
+                    
+                    { 
+                        Console.WriteLine("Addition 5.00 OMR is added to the total cost for extra weight");
+                        Console.WriteLine("The total shipping cost is 6.00 OMR");
+                    }
+                    else
+                       Console.WriteLine ("Please enter a valid weight");
+                    break; 
+
+                case 'B':
+                    {
+                        Console.WriteLine("The shipping cost for National region is 3.00 OMR");
+                    }
+                    if (weight > 5 && weight <= 10)
+                    {
+                        Console.WriteLine("Addition 2.00 OMR is added to the total cost for extra weight");
+                        Console.WriteLine("The total shipping cost is 5.00 OMR");
+                    }
+                    
+
+                    else if (weight > 10)
+                    {
+                        Console.WriteLine("Addition 5.00 OMR is added to the total cost for extra weight");
+                        Console.WriteLine("The total shipping cost is 8.00 OMR");
+                    }
+                    break;
+
+                case 'C':
+                    {
+                        Console.WriteLine("The shipping cost for International region is 7.00 OMR");
+                    }
+                    if (weight > 5 && weight <= 10)
+                    {
+                        Console.WriteLine("Addition 2.00 OMR is added to the total cost for extra weight");
+                        Console.WriteLine("The total shipping cost is 9.00 OMR");
+                    }
+
+                    else if (weight > 10)
+                    {
+                        Console.WriteLine("Addition 5.00 OMR is added to the total cost for extra weight");
+                        Console.WriteLine("The total shipping cost is 12.00 OMR");
+                    }
+                    break; 
             }
         }
-
-
+        
+    
+    
     }
 
         
 }
+
