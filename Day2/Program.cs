@@ -18,6 +18,7 @@
             */
             /////////////////////////////////////////////////////////////////////
             //Task 2 - Sum of Numbers 1 to N
+            /*
             Console.WriteLine("Enter a number: ");
             int number = int.Parse(Console.ReadLine());
             int sum = 0;
@@ -28,7 +29,18 @@
             }
 
             Console.WriteLine("The final sum is: " + sum); 
-
+            */
+            /////////////////////////////////////////////////////////////////////
+            //Task 3 - Multiplication Table
+            Console.WriteLine("Enter a number: ");
+            int number = int.Parse(Console.ReadLine());
+            int counter;
+            int multiplication = 0;
+            for (counter = 1; counter <= 10; counter++)
+            {
+                multiplication = number * counter;
+                Console.WriteLine(number + " x " + counter + " = " + multiplication);
+            }
 
         }
     }
