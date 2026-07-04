@@ -32,6 +32,7 @@
             */
             /////////////////////////////////////////////////////////////////////
             //Task 3 - Multiplication Table
+            /*
             Console.WriteLine("Enter a number: ");
             int number = int.Parse(Console.ReadLine());
             int counter;
@@ -41,6 +42,21 @@
                 multiplication = number * counter;
                 Console.WriteLine(number + " x " + counter + " = " + multiplication);
             }
+            */
+            /////////////////////////////////////////////////////////////////////
+            ///Task 4 - Password Retry
+            Console.WriteLine("Enter your password: ");
+            String password = "Spark2026";
+            String input = Console.ReadLine();
+
+            while (input != password) 
+            {
+                Console.WriteLine("Incorrect password, try again");
+                Console.WriteLine("Enter your password: ");
+                input = Console.ReadLine();
+                
+            }
+            Console.WriteLine("Access Granted");
 
         }
     }
