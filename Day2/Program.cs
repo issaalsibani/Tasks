@@ -95,7 +95,7 @@ namespace Day2
             */
             //////////////////////////////////////////////////////////////////////
             //Task 6 - Safe Division Calculator
-        
+            /*
                 try
                 {
                     Console.WriteLine("Enter the numerator: ");
@@ -116,9 +116,47 @@ namespace Day2
                 {
                   Console.WriteLine("Invalid input. Please enter a valid number."); 
                 }
-            
-            
+                */
+            ////////////////////////////////////////////////////////////////////////////
+            //Task 7 - Repeating Menu with Exit Option
+            bool keeprunning = true;
 
+            while (keeprunning)
+            {
+                Console.WriteLine("Print the menue: ");
+                Console.WriteLine("1. say Hello");
+                Console.WriteLine("2. Show Current Time-of-day Greeting");
+                Console.WriteLine("3. Exit");
+                Console.WriteLine("Enter your choice: ");
+                try
+                {
+                    int choice = int.Parse(Console.ReadLine());
+                    switch (choice)
+                        {
+                        case 1:
+                            Console.WriteLine("Hello!");
+                            break;
+                        case 2:
+                            Console.WriteLine("Current Time-of-day Greeting !");
+                            break;
+                        case 3:
+                            Console.WriteLine("Exiting the program. Goodbye!");
+                            keeprunning = false;
+                            break;
+                        default:
+                            Console.WriteLine("Invalid choice. Select 1, 2, or 3.");
+                            break;
+
+
+                    }
+                }
+
+                catch (Exception format)
+
+                {
+                    Console.WriteLine("Invalid input. Please enter a number.");
+                }
+            }
         }
 
     }
