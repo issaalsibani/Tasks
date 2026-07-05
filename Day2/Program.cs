@@ -64,7 +64,7 @@ namespace Day2
             */
             ////////////////////////////////////////////////////////////////////
             ///Task 5 - Number Guessing Game
-            
+            /*
             int correctNumber = 7;
             int guess;
             int attempts = 0;
@@ -92,6 +92,33 @@ namespace Day2
             {
                 Console.WriteLine(" You guessed the correct number in " + attempts + " attempts.");
             }
+            */
+            //////////////////////////////////////////////////////////////////////
+            //Task 6 - Safe Division Calculator
+        
+                try
+                {
+                    Console.WriteLine("Enter the numerator: ");
+                    decimal numerator = decimal.Parse(Console.ReadLine());
+                    Console.WriteLine("Enter the denominator: ");
+                    decimal denominator = decimal.Parse(Console.ReadLine());
+                    decimal result = numerator / denominator;
+                    Console.WriteLine("The result of the division is: " + result);
+                }
+
+                catch (DivideByZeroException)
+                { 
+           
+                  
+                 Console.WriteLine("Cannot divide by zero");
+                }
+                catch (FormatException )
+                {
+                  Console.WriteLine("Invalid input. Please enter a valid number."); 
+                }
+            
+            
+
         }
 
     }
