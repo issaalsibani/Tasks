@@ -119,6 +119,7 @@ namespace Day2
                 */
             ////////////////////////////////////////////////////////////////////////////
             //Task 7 - Repeating Menu with Exit Option
+            /*
             bool keeprunning = true;
 
             while (keeprunning)
@@ -157,8 +158,30 @@ namespace Day2
                     Console.WriteLine("Invalid input. Please enter a number.");
                 }
             }
+            */
+            //////////////////////////////////////////////////////////////////////////////
+            ///Task 8 - Sum of Even Numbers Only
+            Console.WriteLine("Enter a positive number: ");
+            int number = int.Parse(Console.ReadLine());
+            int sum = 0;
+            for (int Counter = 1; Counter <= number; Counter++)
+            {
+                if (Counter % 2 == 0)
+                {
+                    sum = sum + Counter;
+
+                }
+            }
+                Console.WriteLine("The sum of even numbers from 1 is : " + sum);
+                if (number < 0)
+                {
+                    Console.WriteLine("Please enter a positive number.");
+                }
+            
         }
 
     }
+
+    
     
 }
