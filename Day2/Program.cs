@@ -161,6 +161,7 @@ namespace Day2
             */
             //////////////////////////////////////////////////////////////////////////////
             ///Task 8 - Sum of Even Numbers Only
+            /*
             Console.WriteLine("Enter a positive number: ");
             int number = int.Parse(Console.ReadLine());
             int sum = 0;
@@ -177,7 +178,49 @@ namespace Day2
                 {
                     Console.WriteLine("Please enter a positive number.");
                 }
-            
+            */
+            /////////////////////////////////////////////////////////////////////////////
+            ///Task 9 - Validated Positive Number Input
+
+            // Task 9 - Validated Positive Number Input
+
+            int number = 0;
+            bool validInput = false;
+
+            do
+            {
+                try
+                {
+                    Console.Write("Enter a positive whole number: ");
+                    number = int.Parse(Console.ReadLine());
+
+                    if (number <= 0)
+                    {
+                        Console.WriteLine("The number must be greater than zero.");
+                    }
+                    else
+                    {
+                        validInput = true;
+                    }
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Invalid input. Please enter a whole number.");
+                }
+
+            } while (validInput == false);
+
+
+            // Calculate the sum after receiving valid input
+
+            int sum = 0;
+
+            for (int counter = 1; counter <= number; counter++)
+            {
+                sum = sum + counter;
+            }
+
+            Console.WriteLine("The sum from 1 to " + number + " is: " + sum);
         }
 
     }
