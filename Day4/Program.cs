@@ -27,6 +27,11 @@
             Console.WriteLine("2. Help");
             Console.WriteLine("3. Exit");
         }
+
+        public static bool IsEven(int number)
+        {
+            return number % 2 == 0;
+        }
         static void Main(string[] args)
         {
             //Task 1 - Personalized Welcome Function
@@ -59,6 +64,21 @@
             //////////////////////////////////////////////////////////////////
             //Task 4 - Fixed Menu Display Function
             //Program.PrintMenue();
+
+            // Task 5 - Even or Odd Function
+            Console.WriteLine("Enter a whole number: ");
+            int usernumber = int.Parse(Console.ReadLine());
+
+            bool result = IsEven(usernumber);
+            if (result)
+            {
+                Console.WriteLine("The number is even");
+
+            }
+            else
+            {
+                Console.WriteLine("The number is odd");
+            }
         }
     }
 }
