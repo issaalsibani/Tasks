@@ -41,6 +41,30 @@
         {
             return 2 * (length + width);
         }
+
+        public static string GetGradeLetter(int score)
+        {
+            if (score >= 90)
+            {
+                return "A";
+            }
+            else if (score >= 80)
+            {
+                return "B";
+            }
+            else if (score >= 70)
+            {
+                return "C";
+            }
+            else if (score >= 60)
+            {
+                return "D";
+            }
+            else
+            {
+                return "F";
+            }
+        }
         static void Main(string[] args)
         {
             //Task 1 - Personalized Welcome Function
@@ -92,6 +116,7 @@
             */
             ///////////////////////////////////////////////////////////////
             //Task 6 - Rectangle Area & Perimeter Functions
+            /*
             Console.Write("Enter the rectangle length: ");
             double length = double.Parse(Console.ReadLine());
 
@@ -103,6 +128,15 @@
 
             Console.WriteLine("Area: " + area);
             Console.WriteLine("Perimeter: " + perimeter);
+            */
+            ///////////////////////////////////////////////////////////
+            //Task 7 - Grade Letter Function
+            Console.Write("Enter your score: ");
+            int userScore = int.Parse(Console.ReadLine());
+
+            string grade = GetGradeLetter(userScore);
+
+            Console.WriteLine("Your grade is: " + grade);
         }
     }
 }
