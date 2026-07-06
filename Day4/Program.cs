@@ -65,6 +65,14 @@
                 return "F";
             }
         }
+
+        public static void Countdown(int startingNumber)
+        {
+            for (int counter = startingNumber; counter >= 1; counter--)
+            {
+                Console.WriteLine(counter);
+            }
+        }
         static void Main(string[] args)
         {
             //Task 1 - Personalized Welcome Function
@@ -131,12 +139,22 @@
             */
             ///////////////////////////////////////////////////////////
             //Task 7 - Grade Letter Function
+            /*
             Console.Write("Enter your score: ");
             int userScore = int.Parse(Console.ReadLine());
 
             string grade = GetGradeLetter(userScore);
 
             Console.WriteLine("Your grade is: " + grade);
+            */
+            ///////////////////////////////////////////////////////////////
+            //Task 8 - Countdown Function
+            Console.Write("Enter a starting number: ");
+            int userNumber = int.Parse(Console.ReadLine());
+
+            Countdown(userNumber);
+
+
         }
     }
 }
