@@ -32,6 +32,15 @@
         {
             return number % 2 == 0;
         }
+
+        public static double Area (double lenght, double width)
+        {
+            return lenght * width;
+        }
+        public static double CalculatePerimeter(double length, double width)
+        {
+            return 2 * (length + width);
+        }
         static void Main(string[] args)
         {
             //Task 1 - Personalized Welcome Function
@@ -66,6 +75,7 @@
             //Program.PrintMenue();
 
             // Task 5 - Even or Odd Function
+            /*
             Console.WriteLine("Enter a whole number: ");
             int usernumber = int.Parse(Console.ReadLine());
 
@@ -79,6 +89,20 @@
             {
                 Console.WriteLine("The number is odd");
             }
+            */
+            ///////////////////////////////////////////////////////////////
+            //Task 6 - Rectangle Area & Perimeter Functions
+            Console.Write("Enter the rectangle length: ");
+            double length = double.Parse(Console.ReadLine());
+
+            Console.Write("Enter the rectangle width: ");
+            double width = double.Parse(Console.ReadLine());
+
+            double area = Area(length, width);
+            double perimeter = CalculatePerimeter(length, width);
+
+            Console.WriteLine("Area: " + area);
+            Console.WriteLine("Perimeter: " + perimeter);
         }
     }
 }
