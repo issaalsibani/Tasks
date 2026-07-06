@@ -19,6 +19,14 @@
             double fahrenheit = (celsius * 9.0 / 5.0) + 32;
             return fahrenheit;
         }
+
+        public static void PrintMenue()
+        {
+            Console.WriteLine("Menue: ");
+            Console.WriteLine("1. Start");
+            Console.WriteLine("2. Help");
+            Console.WriteLine("3. Exit");
+        }
         static void Main(string[] args)
         {
             //Task 1 - Personalized Welcome Function
@@ -40,13 +48,17 @@
             */
             ////////////////////////////////////////////////////////
             //Task 3 - Celsius to Fahrenheit Function
-
+            /*
             Console.Write("Enter the temperature in Celsius: ");
             double userCelsius = double.Parse(Console.ReadLine());
 
             double result = CelsiusToFahrenheit(userCelsius);
 
             Console.WriteLine("Temperature in Fahrenheit: " + result);
+            */
+            //////////////////////////////////////////////////////////////////
+            //Task 4 - Fixed Menu Display Function
+            //Program.PrintMenue();
         }
     }
 }
