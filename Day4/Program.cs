@@ -73,6 +73,21 @@
                 Console.WriteLine(counter);
             }
         }
+
+        public static int Multiply( int a, int b)
+        {
+            return a * b;
+        }
+
+        public static double Multiply( double a, double b )
+        {
+            return a * b;
+        }
+
+        public static int Multiply( int a, int b, int c)
+        {
+            return a * b * c;
+        }
         static void Main(string[] args)
         {
             //Task 1 - Personalized Welcome Function
@@ -149,10 +164,22 @@
             */
             ///////////////////////////////////////////////////////////////
             //Task 8 - Countdown Function
+            /*
             Console.Write("Enter a starting number: ");
             int userNumber = int.Parse(Console.ReadLine());
 
             Countdown(userNumber);
+            */
+            ///////////////////////////////////////////////////////////////
+            //Task 9 - Overloaded Multiply Function
+            int result1 = Multiply(3, 4);
+            double result2 = Multiply(2.5, 4.0);
+            int result3 = Multiply(2, 3, 4);
+
+            Console.WriteLine("Two integers: " + result1);
+            Console.WriteLine("Two doubles: " + result2);
+            Console.WriteLine("Three integers: " + result3);
+
 
 
         }
