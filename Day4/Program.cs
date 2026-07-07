@@ -4,7 +4,7 @@ namespace Day4
 {
     internal class Program
     {
-        
+
         /*
         public static void Print(string name)
         {
@@ -92,7 +92,7 @@ namespace Day4
             return a * b * c;
         }
         */
-
+        /*
         public static double CalculateArea( double a)
         {
             return a * a;
@@ -101,6 +101,42 @@ namespace Day4
         public static double CalculateArea( double lenght, double width )
         {
             return lenght * width;
+        }
+        */
+
+        public static double Add(double a, double b)
+        {
+          return a + b;
+        }
+
+        public static double Subtract(double a, double b)
+        {
+            return a - b;
+        }
+
+        static double MultiplyNumbers(double a, double b)
+        {
+            return a * b;
+        }
+        static double DivideNumbers(double a, double b)
+        {
+            try
+            {
+               if ( b == 0)
+                {
+                    throw new DivideByZeroException();
+                }
+                return a / b;
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Cannnot divide by zoro");
+                return 0;
+            }
+        }
+        public static void DisplayResult(string operationName, double result)
+        {
+            Console.WriteLine(operationName + " result: " + result);
         }
         static void Main(string[] args)
         {
@@ -197,6 +233,7 @@ namespace Day4
             */
             ////////////////////////////////////////////////////////////////
             //Task 10 - Overloaded Area Calculator
+            /*
             Console.WriteLine("What shape area you want to calculat? ");
             String shape = Console.ReadLine();
 
@@ -215,6 +252,78 @@ namespace Day4
                 double width1 = double.Parse(Console.ReadLine());
                 double area = CalculateArea(width1, lenght1);
                 Console.WriteLine("The area of rectangle is " + area);
+            }
+            else
+            {
+              Console.WriteLine("Invalid input");
+            }
+            */
+            /////////////////////////////////////////////////////////////////
+            //Task 11 - Function-Based Calculator
+            bool keepRunning = true;
+
+            while (keepRunning)
+            {
+                Console.WriteLine("\n--- Calculator Menu ---");
+                Console.WriteLine("1. Add");
+                Console.WriteLine("2. Subtract");
+                Console.WriteLine("3. Multiply");
+                Console.WriteLine("4. Divide");
+                Console.WriteLine("5. Exit");
+                Console.Write("Choose an option: ");
+
+                try
+                {
+                    int choice = int.Parse(Console.ReadLine());
+
+                    if (choice == 5)
+                    {
+                        Console.WriteLine("Calculator closed.");
+                        keepRunning = false;
+                        continue;
+                    }
+
+                    if (choice < 1 || choice > 4)
+                    {
+                        Console.WriteLine("Invalid option. Choose from 1 to 5.");
+                        continue;
+                    }
+
+                    Console.Write("Enter the first number: ");
+                    double firstNumber = double.Parse(Console.ReadLine());
+
+                    Console.Write("Enter the second number: ");
+                    double secondNumber = double.Parse(Console.ReadLine());
+
+                    double result;
+
+                    switch (choice)
+                    {
+                        case 1:
+                            result = Add(firstNumber, secondNumber);
+                            DisplayResult("Addition", result);
+                            break;
+
+                        case 2:
+                            result = Subtract(firstNumber, secondNumber);
+                            DisplayResult("Subtraction", result);
+                            break;
+
+                        case 3:
+                            result = MultiplyNumbers(firstNumber, secondNumber);
+                            DisplayResult("Multiplication", result);
+                            break;
+
+                        case 4:
+                            result = DivideNumbers(firstNumber, secondNumber);
+                            DisplayResult("Division", result);
+                            break;
+                    }
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Invalid input. Please enter numbers only.");
+                }
             }
         }
     }
