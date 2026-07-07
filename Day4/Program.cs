@@ -1,8 +1,11 @@
-﻿namespace Day4
+﻿using System.Reflection.Metadata.Ecma335;
+
+namespace Day4
 {
     internal class Program
     {
         
+        /*
         public static void Print(string name)
         {
             Console.WriteLine("Welcome " + name);
@@ -88,6 +91,17 @@
         {
             return a * b * c;
         }
+        */
+
+        public static double CalculateArea( double a)
+        {
+            return a * a;
+        }
+
+        public static double CalculateArea( double lenght, double width )
+        {
+            return lenght * width;
+        }
         static void Main(string[] args)
         {
             //Task 1 - Personalized Welcome Function
@@ -172,6 +186,7 @@
             */
             ///////////////////////////////////////////////////////////////
             //Task 9 - Overloaded Multiply Function
+            /*
             int result1 = Multiply(3, 4);
             double result2 = Multiply(2.5, 4.0);
             int result3 = Multiply(2, 3, 4);
@@ -179,9 +194,28 @@
             Console.WriteLine("Two integers: " + result1);
             Console.WriteLine("Two doubles: " + result2);
             Console.WriteLine("Three integers: " + result3);
+            */
+            ////////////////////////////////////////////////////////////////
+            //Task 10 - Overloaded Area Calculator
+            Console.WriteLine("What shape area you want to calculat? ");
+            String shape = Console.ReadLine();
 
-
-
+            if (shape == "square" )
+            {
+                Console.WriteLine("Enter side lenght: ");
+                double side = double.Parse(Console.ReadLine());
+                double square = CalculateArea(side);
+                Console.WriteLine("The area of square is " + square);
+            }
+            else if (shape == "rectangle")
+            {
+                Console.WriteLine("Enter the lenght of rectangle: ");
+                double lenght1 = double.Parse(Console.ReadLine());
+                Console.WriteLine("Enter width of rectangle");
+                double width1 = double.Parse(Console.ReadLine());
+                double area = CalculateArea(width1, lenght1);
+                Console.WriteLine("The area of rectangle is " + area);
+            }
         }
     }
 }
