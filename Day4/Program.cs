@@ -138,6 +138,42 @@ namespace Day4
         {
             Console.WriteLine(operationName + " result: " + result);
         }
+
+        static double CalculateAverage(double score1, double score2, double score3)
+        {
+            return (score1 + score2 + score3) / 3;
+        }
+
+        public static string GetGradeLetter(double average)
+        {
+            if (average >= 90)
+            {
+                return "A";
+            }
+            else if (average >= 80)
+            {
+                return "B";
+            }
+            else if (average >= 70)
+            {
+                return "C";
+            }
+            else if (average >= 60)
+            {
+                return "D";
+            }
+            else
+            {
+                return "F";
+            }
+        }
+        static void PrintReportCard(string studentName, double average, string grade)
+        {
+            Console.WriteLine("\n--- Student Report Card ---");
+            Console.WriteLine("Student Name: " + studentName);
+            Console.WriteLine("Average: " + average.ToString("F2"));
+            Console.WriteLine("Grade: " + grade);
+        }
         static void Main(string[] args)
         {
             //Task 1 - Personalized Welcome Function
@@ -260,6 +296,7 @@ namespace Day4
             */
             /////////////////////////////////////////////////////////////////
             //Task 11 - Function-Based Calculator
+            /*
             bool keepRunning = true;
 
             while (keepRunning)
@@ -325,6 +362,28 @@ namespace Day4
                     Console.WriteLine("Invalid input. Please enter numbers only.");
                 }
             }
+            */
+            /////////////////////////////////////////////////////////////////////////////
+            //Task 12 - Student Report Card Generator
+            Console.Write("Enter the student's name: ");
+            string name = Console.ReadLine();
+
+            Console.Write("Enter the first subject score: ");
+            double score1 = double.Parse(Console.ReadLine());
+
+            Console.Write("Enter the second subject score: ");
+            double score2 = double.Parse(Console.ReadLine());
+
+            Console.Write("Enter the third subject score: ");
+            double score3 = double.Parse(Console.ReadLine());
+
+            double average =
+                CalculateAverage(score1, score2, score3);
+
+            string grade =
+                GetGradeLetter(average);
+
+            PrintReportCard(name, average, grade);
         }
     }
 }
