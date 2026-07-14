@@ -49,10 +49,10 @@ namespace OOP_Part_1
         public void Register(string Email)
         {
             email = Email;
-            sendEmail;
+            SendEmail();
 
         }
-        private void sendEmail()
+        private void SendEmail()
         {
             Console.WriteLine("Registration email sent successfully");
         }
@@ -179,5 +179,137 @@ namespace OOP_Part_1
                 }
             }
         }
+        static BankAccount ChooseAccount()
+        {
+            Console.WriteLine("Choose acount 1 or 2: ");
+            int choice = int.Parse (Console.ReadLine());
+            if (choice == 2)
+            {
+                return account2;
+            }
+            return account1;
+        }
+        static Student ChooseStudent()
+        {
+            Console.WriteLine("Choose student 1 or 2: ");
+            int choice = int.Parse (Console.ReadLine());
+            if (choice == 1)
+            {
+                return student1;
+            }
+            return student2;
+        }
+        static Product ChooseProduct()
+        {
+            Console.WriteLine("Choose product 1 or 2:");
+            int choice = int.Parse(Console.ReadLine());
+            if (choice ==1)
+            {
+                return product1;
+            }
+            return product2;
+
+        }
+
+        //Case 1 - View Account Details
+        static void ViewAccountDetails()
+        {
+            BankAccount Choosen = ChooseAccount();
+            Choosen.CheckBalance();
+        }
+
+        //Case 2 - Update Student Address
+        static void UpdateStudentAddress()
+        {
+            Student student = ChooseStudent();
+            Console.WriteLine("Enter new address: ");
+            String newAddress = Console.ReadLine();
+            student.Address = newAddress;
+            Console.WriteLine("Address updated to "+ student.Address);
+        }
+
+        //Case 3 - Make a Deposit
+        static void MakeDeposit()
+        {
+            BankAccount Choosen = ChooseAccount();
+            Console.WriteLine("Entet amount you want to deposit: ");
+            double amount = double.Parse (Console.ReadLine());
+            Choosen.Deposit(amount);
+            Console.WriteLine("Account holder: " + Choosen.HolderName);
+            Console.WriteLine("Updated balance: " + Choosen.Balance);
+
+        }
+
+        //Case 4 - Make a Withdrawal
+        static void MakeWithdrawal()
+        {
+            BankAccount Choosen = ChooseAccount();
+            Console.WriteLine("Entet amount you want to withdraw: ");
+            double amount = double.Parse(Console.ReadLine());
+            Choosen.Withdraw(amount);
+            Console.WriteLine("Updated balance: " + Choosen.Withdraw);
+        }
+
+        //Case 5 - View Product Details
+        static void ViewProductDetails()
+        {
+            Product choosen = ChooseProduct();
+            double inventoryValue = choosen.GetInventoryValue();
+            Console.WriteLine("Total inventory value: " + inventoryValue);
+        }
+
+        //Case 6 - Register a Student
+        static void RegisterStudent()
+        {
+            Student selectedStudent = ChooseStudent();
+
+            Console.WriteLine("Enter student email:");
+            string email = Console.ReadLine();
+
+            selectedStudent.Register(email);
+
+            Console.WriteLine("Student registered successfully.");
+        }
+        //Case 7 - Compare Two Account Balances
+        static void CompareAccountBalances()
+        {
+            if (account1.Balance > account2.Balance)
+            {
+                Console.WriteLine(account1.HolderName + " has more money.");
+            }
+            else if (account2.Balance > account1.Balance)
+            {
+                Console.WriteLine(account2.HolderName + " has more money.");
+            }
+            else
+            {
+                Console.WriteLine("Both accounts have the same balance.");
+            }
+        }
+
+        //Case 8 - Restock Product & Stock Level Check
+        static void RestockProduct()
+        {
+            Product choosen = ChooseProduct();
+            Console.WriteLine("Enter quantity to restock: ");
+            int quantity = int.Parse(Console.ReadLine());
+            choosen.Restock(quantity);
+            Console.WriteLine("Updated stock quantity: " + choosen.StockQuantity);
+            if (choosen.StockQuantity < 10)
+            {
+                Console.WriteLine("Stock level: Low");
+            }
+            else if (choosen.StockQuantity >= 10 && choosen.StockQuantity <= 49)
+            {
+                Console.WriteLine("Stock level: Moderate");
+            }
+            else
+            {
+                Console.WriteLine("Stock level: Well Stocked");
+            }
+
+        }
+
+
     }
 }
